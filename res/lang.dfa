@@ -1,0 +1,83 @@
+states
+start      - s
+string     - e
+backslash  - e
+command    - e
+l_brace    - e
+r_brace    - e
+r_brace_2    - e
+r_brace_3    - e
+r_brace_4    - e
+l_bracket  - e
+r_bracket  - e
+end_e
+end_n
+end        - e
+end_2        - e
+end_3        - e
+end_4        - e
+begin_b
+begin_e
+begin_g
+begin_i
+begin      - e
+ignore     - e
+percent    - e
+comment    - e
+comment_1    - e
+comment_2    - e
+
+transitions
+
+#Singletons
+start \\ backslash
+start \[ l_bracket
+start \] r_bracket
+start \{ l_brace
+start \} r_brace
+start % comment
+
+#Strings
+start [^\\\[\]\{\}%] string
+string [^\\\[\]\{\}%] string
+
+#Backslashes
+backslash [^bBeE\W] command
+backslash [bB] begin_b
+backslash [eE] end_e
+backslash % percent
+
+#End
+end_e [nN] end_n
+end_e [^nN\W] command
+end_n [dD] end
+end_n [^dD\W] command
+end \w command
+
+end \s end_2
+end_2 [\r\n] end_3
+end_3 [\n] end_4
+
+#Begin
+begin_b [eE] begin_e
+begin_b [^eE\W] command
+begin_e [gG] begin_g
+begin_e [^gG\W] command
+begin_g [iI] begin_i
+begin_g [^iIgG] command
+begin_i [nN] begin
+begin_i [^iI\W] command
+begin \w command
+
+#Command
+command \w command
+
+r_brace \s r_brace_2
+r_brace_2 [\r\n] r_brace_3
+r_brace_3 [\n] r_brace_4
+
+ignore [\r\n] ignore
+
+comment [^\r\n] comment
+comment \r comment_1
+comment_1 \n comment_2

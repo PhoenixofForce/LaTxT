@@ -1,0 +1,113 @@
+\begin[79, maketoc]{document}
+\section{Introduction}
+This is a LaTeX-like language to create .txt files.
+Long texts are automatically cut like that:
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+%
+\section{Commands}
+As you can see sections and subsections are implemented. There is no limit on how many subs you can do.
+%
+\subsection{Mathematical Symbols}
+Most mathematical symbols are working. EX: \leftarrow \Rightarrow \subseteq \in \forall \omega
+%
+\subsection{Texstyles}
+\textbf{Bold}  and \textit{italic}  texts are in. As well as \textbfit{bold and italic}
+%
+\section{Areas}
+There are some Areas implemented.
+%
+\subsection{Aligns}
+\begin{right}
+With the right-area you can write on the right
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\end
+
+\begin{center}
+With the center-area you can write in the middle
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\end
+
+\begin{left}
+With the left-area you can write on the left
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\end
+%
+\subsection{Box}
+\begin[header="You can add a header"]{box}
+And then you have some text in here.
+\end
+\begin[margin=6, padding = 5]{box}
+You can also edit margin and padding.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+\end
+%
+\subsection{Figure}
+With figures you can draw Boxes, Lines, Arrows and place Text.
+\begin{figure}
+\box{0, 0, 2, 2}
+\string{1, 1, A}
+
+\arrow{3, 1, 7, 1}
+\string{5, 0, c}
+
+\box{8, 0, 10, 2}
+\string{9, 1, B}
+\end
+%
+\subsection{Itemize}
+Of cource you can also
+\begin{itemize}
+\item list
+\item things
+\end
+And you can
+\begin[point='-']{itemize}
+\item change
+\item the
+\item bullets
+\end
+Or you can
+\begin[style=enumerate]{itemize}
+\item change
+\item to
+\item enumeration
+\end
+%
+\subsection{Multipage}
+\begin{multipage}
+\begin{subpage}
+When you want to have multiple Pages next to another.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+\end
+\begin{subpage}
+You have to use multipage and subpage.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+\end
+\end
+There can be as many subpages as you want, but they can get too smal, which can lead to errors.
+%
+\subsection{SmallPage}
+\begin[32]{smallpage}
+If you want to, you can switch to a smaller page width.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\end
+%
+\subsection{Table}
+The best thing comes last: Tables.
+\begin[r|c|l]{table}
+Column 1 & Column 2 & Column 3
+\hline
+This does work & really well & dont u think&
+1 & 2 & 3
+Lorem ipsum dolor sit amet \& & consetetur  & sadipscing elitr
+
+&2&
+\end
+\end
