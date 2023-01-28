@@ -1,6 +1,6 @@
 # LaTxT
 This is a LaTeX-like language to create .txt files.
-The following block was written with LaTxT and explaines all the functionality while also showing how the result will look.
+The following block was written with LaTxT (you can find the untranslated file in `res/in` or <a href="https://raw.githubusercontent.com/PhoenixofForce/LaTxT/master/res/test.in"> here </a>) and explaines all the functionality while also showing how the result will look.
 
 ```
 Introduction................................................................[1]
